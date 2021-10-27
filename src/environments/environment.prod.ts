@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlUser:"https://contact-managerapi.herokuapp.com/api/author",
+  baseUrlPost:"https://contact-managerapi.herokuapp.com/api/post"
 };
