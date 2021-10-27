@@ -1,0 +1,32 @@
+<app-nav></app-nav>
+<body>
+    <div class="container">
+        <form #editForm="ngForm" (ngSubmit)="onDeleteContact()">
+            <div class="container shadow">
+                <div class="card-header text-white" style="background-color: firebrick;">
+                    <div class="container text-white" style="font-size: 1.8rem; text-align: center; font-family: monospace;">Are you sure you want to delete this contact?</div>
+                </div>  
+                <div class="card-body">
+                    <div [class]="isError? 'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+                    <div [class]="isSuccess? 'alert alert-success':'d-none'" class="my-4">{{message}}</div>  
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Name:</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="contact.cname" readonly/>   
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Email:</label>
+                        <input type="text"  class="form-control" name="email" placeholder="Email" [(ngModel)]="contact.cemail" readonly/>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Phone No.:</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="contact.cph" readonly/>   
+                    </div>                
+                    <div class="form-group text-end mt-4">
+                        <button class="btn btn-primary">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div> 
+    
+</body>

@@ -1,0 +1,32 @@
+<app-nav></app-nav>
+<body>
+    <div class="container">
+        <form #editForm="ngForm" (ngSubmit)="onSubmitContact()">
+            <div class="container shadow">
+                <div class="card-header text-white" style="background-color: firebrick;">
+                    <div class="container text-white" style="font-size: 2.5rem; text-align: center; font-family: monospace;">Edit contact</div>
+                </div>  
+                <div class="card-body">
+                    <div [class]="isError? 'alert alert-danger':'d-none'" class="my-4">{{message}}</div>
+                    <div [class]="isSuccess? 'alert alert-success':'d-none'" class="my-4">{{message}}</div>  
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Name:</label>
+                        <input type="text" class="form-control" name="name" placeholder="Name" [(ngModel)]="contact.cname"/>   
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Email:</label>
+                        <input type="text"  class="form-control" name="email" placeholder="Email" [(ngModel)]="contact.cemail"/>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label class="container" style="font-size: 1.2rem;">Phone No.:</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" [(ngModel)]="contact.cph"/>   
+                    </div>                
+                    <div class="form-group text-end mt-4">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div> 
+    
+</body>

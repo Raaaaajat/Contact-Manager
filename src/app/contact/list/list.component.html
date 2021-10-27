@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="col-18 text-end">
+                    <a routerLink="/contact/add" class="btn btn-success">Add Contacts</a> &nbsp;&nbsp;
+                </div>
+                <div class="card shadow mt-2" *ngFor="let post of postData">        
+                    <div class="card-header text-dark" style="background-color: bisque;">
+                        <h2>{{post.postContName}}</h2> 
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 text-dark" style="background-color: aquamarine;"> 
+                                <div class="row">
+                                    <div class="col-6">{{post.userId.name}}</div> 
+                                    <div class="col-6 text-end">{{post.postDate | date:'dd/MM/YYYY'}}</div> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="background: lemonchiffon;">
+                            <div class="col-12">{{post.postContPhone}}</div> 
+                        </div>
+                        <div class="col-12 mt-2 text-end">
+                            <a routerLink="/contact/edit/{{post._id}}" class="btn btn-warning">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="col-18 mt-2 text-end">
+                            <a routerLink="/contact/delete/{{post._id}}" class="btn btn-primary">Delete</a> &nbsp;&nbsp;
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
